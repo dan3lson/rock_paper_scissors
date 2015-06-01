@@ -1,0 +1,50 @@
+<h1>MMORPS</h1>
+
+<h2><%= welcome %></h2>
+
+<br>
+<p><%= summary if summary %></p>
+<table>
+  <th>
+    Player
+  </th>
+  <th>
+    Score
+  </th>
+  <tr>
+    <td>
+      Human
+    </td>
+    <td>
+      <%= player_score %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Computer
+    </td>
+    <td>
+      <%= computer_score %>
+    </td>
+  </tr>
+</table>
+<br>
+<%= "#{result} wins this round" if result %>
+<br>
+<% if game_result %>
+  <h1><%= game_result %></h1>
+  <br>
+  <a href="/clear">Play Again</a>
+<% else %>
+
+  <h3>Choose!</h3>
+
+  <form action="/" method="post">
+    <input type="image" name="player_choice" value="r" src="/rock.png" alt="Rock" />
+    <input type="image" name="player_choice" value="p" src="/paper.png" alt="Paper" />
+    <input type="image" name="player_choice" value="s" src="/scissors.png" alt="Scissors" />
+  </form>
+
+<% end %>
+
+<!--  params[:player_choice] = "r"-->
